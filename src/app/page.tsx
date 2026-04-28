@@ -510,10 +510,10 @@ export default function Home() {
               <ul className="space-y-2 text-sm">
                 <li>
                   <Link
-                    href="mailto:info@tothepub.com"
+                    href="mailto:tothepub.contact@gmail.com"
                     className="text-muted-foreground hover:text-[var(--vibrant-teal)] transition-colors"
                   >
-                    info@tothepub.com
+                    tothepub.contact@gmail.com
                   </Link>
                 </li>
                 <li>
