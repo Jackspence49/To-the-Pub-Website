@@ -42,7 +42,9 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                  <Button className="bg-[var(--vibrant-teal)] hover:bg-[var(--vibrant-teal)]/90 text-white">Download App</Button>
+                  <a href="https://apps.apple.com/us/app/to-the-pub/id6763960326" target="_blank" rel="noopener noreferrer">
+                    <Button className="bg-[var(--vibrant-teal)] hover:bg-[var(--vibrant-teal)]/90 text-white">Download App</Button>
+                  </a>
                   <Link href="/the-app">
                     <Button variant="outline" className="hidden md:flex border-[var(--vibrant-teal)] text-[var(--vibrant-teal)] hover:bg-[var(--vibrant-teal)]/10" >
                       Learn More
@@ -209,7 +211,9 @@ export default function Home() {
                   </div>
                 </div>
                 <div>
-                  <Button className="bg-[var(--vibrant-teal)] hover:bg-[var(--vibrant-teal)]/90 text-white">Download App</Button>
+                  <a href="https://apps.apple.com/us/app/to-the-pub/id6763960326" target="_blank" rel="noopener noreferrer">
+                    <Button className="bg-[var(--vibrant-teal)] hover:bg-[var(--vibrant-teal)]/90 text-white">Download App</Button>
+                  </a>
                 </div>
               </div>
               <div className="mx-auto flex items-center justify-center">

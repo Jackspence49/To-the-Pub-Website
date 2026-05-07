@@ -26,7 +26,9 @@ export default function About() {
                 customers who are actively seeking the experiences you offer.
               </p>
               <div className="pt-6">
-                <Button className="bg-[#00B8D4] hover:bg-[#00B8D4]/90 text-white">Download App</Button>
+                <a href="https://apps.apple.com/us/app/to-the-pub/id6763960326" target="_blank" rel="noopener noreferrer">
+                  <Button className="bg-[#00B8D4] hover:bg-[#00B8D4]/90 text-white">Download App</Button>
+                </a>
               </div>
             </div>
           </div>

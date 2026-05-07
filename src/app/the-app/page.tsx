@@ -56,7 +56,9 @@ export default function About() {
                 </div>
               </div>
               <div>
-                <Button className="bg-[var(--vibrant-teal)] hover:bg-[var(--vibrant-teal)]/90 text-white">Download App</Button>
+                <a href="https://apps.apple.com/us/app/to-the-pub/id6763960326" target="_blank" rel="noopener noreferrer">
+                  <Button className="bg-[var(--vibrant-teal)] hover:bg-[var(--vibrant-teal)]/90 text-white">Download App</Button>
+                </a>
               </div>
             </div>
             <div className="mx-auto flex items-center justify-center">
