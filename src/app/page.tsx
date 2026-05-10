@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Search, MapPin, Calendar, Clock, BarChart2, Bell, Users, Dot, Instagram, Notebook, Facebook } from "lucide-react"
+import { Search, MapPin, Calendar, BarChart2, Bell, Users, Dot, Instagram, Notebook, Facebook } from "lucide-react"
 import styles from "./page.module.css"
 
 export default function HomePage() {

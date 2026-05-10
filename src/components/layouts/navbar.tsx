@@ -32,8 +32,9 @@ export function PublicNavbar() {
       <div>
         {/* Header */}
         <header className="sticky top-0 z-40 w-full border-b bg-white">
-          <div className="flex h-20 md:h-24 items-center justify-between md:container px-4">
-            <div className="flex items-center gap-2">
+          <div className="relative flex h-20 md:h-24 items-center px-4 md:px-8">
+            {/* Left - Logo */}
+            <div className="flex items-center">
                 <Link href="/">
                     <Image
                       src="/ToThePub-logo.png"
@@ -45,8 +46,8 @@ export function PublicNavbar() {
                     />
                 </Link>
             </div>
-            {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center gap-6">
+            {/* Center - Desktop Navigation (absolutely centered on the page) */}
+            <nav className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-6">
               <Link href="/the-app" className="text-base font-medium text-[var(--text-on-light)] hover:text-[var(--vibrant-teal)] transition-colors">
                 The App
               </Link>
@@ -57,7 +58,8 @@ export function PublicNavbar() {
                 About
               </Link>
             </nav>
-            <div className="flex items-center gap-4">
+            {/* Right - Login + Mobile Menu */}
+            <div className="flex items-center justify-end gap-4 ml-auto">
               {/* Desktop Login */}
               <div className="hidden md:block">
                 <Link href="/login">
@@ -67,7 +69,7 @@ export function PublicNavbar() {
               {/* Mobile Menu Button */}
               <button
                 ref={buttonRef}
-                className="hamburger-button mr-[-1.5rem] md:hidden p-2"
+                className="hamburger-button md:hidden p-2"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 aria-label="Toggle menu"
               >
