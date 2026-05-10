@@ -2,21 +2,21 @@
 
 :root {
   /* Primary Colors */
-  --dark-sapphire: #1A2B3C;
-  --charcoal-gray: #333333;
+  --dark-sapphire: #212121;
+  --charcoal-gray: #757575;
   
   /* Accent Colors */
-  --vibrant-teal: #00B8D4;
+  --vibrant-teal: #1976D2;
   --goldenrod: #FFC107;
   
   /* Neutral Colors */
-  --light-gray: #E0E0E0;
+  --light-gray: #F5F5F5;
   --white: #FFFFFF;
   
   /* Typography Colors */
   --text-on-dark: #FFFFFF;
-  --text-on-light: #333333;
-  --text-accent: #00B8D4;
+  --text-on-light: #212121;
+  --text-accent: #1976D2;
   
   /* Theme Colors */
   --background: var(--dark-sapphire);

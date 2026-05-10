@@ -1,540 +1,274 @@
 import Link from "next/link"
-import "./globals.css";
-import { Button } from "@/components/ui/button"
-import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Badge } from "@/components/ui/badge"
-import {
-  Calendar,
-  Clock,
-  Compass,
-  Filter,
-  MapPin,
-  Music,
-  Search,
-  Star,
-  Users,
-  Beer,
-  Wine,
-  CoffeeIcon as Cocktail,
-  Mic,
-  Gamepad2,
-  ArrowRight,
-} from "lucide-react"
+import { Search, MapPin, Calendar, Clock, BarChart2, Bell, Users, Dot, Instagram, Notebook, Facebook } from "lucide-react"
+import styles from "./page.module.css"
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="flex min-h-screen flex-col">
-      <main className="flex-1">
-        {/* Hero Section */}
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-[var(--dark-sapphire)] text-white">
-          <div className="container px-4 md:px-6">
-            <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
-              <div className="flex flex-col justify-center space-y-4">
-                <div className="space-y-2">
-                  <Badge className="inline-flex bg-[var(--goldenrod)] text-[var(--dark-sapphire)] hover:bg-[var(--goldenrod)]/90">New App</Badge>
-                  <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
-                    Discover Your Perfect Night Out
-                  </h1>
-                  <p className="max-w-[600px] text-gray-200 md:text-xl">
-                    Real-time event discovery, precise filtering, and bar atmosphere categorization to find exactly what
-                    you&rsquo;re looking for tonight.
-                  </p>
-                </div>
-                <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                  <a href="https://apps.apple.com/us/app/to-the-pub/id6763960326" target="_blank" rel="noopener noreferrer">
-                    <Button className="bg-[var(--vibrant-teal)] hover:bg-[var(--vibrant-teal)]/90 text-white">Download App</Button>
-                  </a>
-                  <Link href="/the-app">
-                    <Button variant="outline" className="hidden md:flex border-[var(--vibrant-teal)] text-[var(--vibrant-teal)] hover:bg-[var(--vibrant-teal)]/10" >
-                      Learn More
-                    </Button>
-                  </Link>
-                </div>
-              </div>
-              <div className="mx-auto flex items-center justify-center">
-                <div className="relative h-[500px] w-[250px] overflow-hidden rounded-xl border-8 border-[var(--charcoal-gray)] shadow-xl">
-                  <div className="absolute inset-0 bg-[var(--dark-sapphire)]">
-                    <div className="flex h-full flex-col">
-                      <div className="h-12 bg-[var(--charcoal-gray)] flex items-center justify-center">
-                        <div className="h-4 w-20 rounded-full bg-[var(--light-gray)]"></div>
-                      </div>
-                      <div className="flex-1 p-4">
-                        <div className="mb-4 h-8 w-full rounded-md bg-[var(--vibrant-teal)]"></div>
-                        <div className="space-y-3">
-                          {[1, 2, 3, 4].map((i) => (
-                            <div key={i} className="h-24 rounded-lg bg-[var(--charcoal-gray)] p-3">
-                              <div className="h-4 w-3/4 rounded-full bg-white mb-2"></div>
-                              <div className="h-3 w-1/2 rounded-full bg-[var(--light-gray)]"></div>
-                              <div className="mt-3 flex gap-2">
-                                <div className="h-6 w-16 rounded-full bg-[var(--vibrant-teal)]"></div>
-                                <div className="h-6 w-16 rounded-full bg-[var(--goldenrod)]"></div>
-                              </div>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+    <div className={styles.page}>
 
-        {/* Features Section */}
-        <section id="features" className="w-full py-12 md:py-24 lg:py-32 bg-white">
-          <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
-                <Badge className="bg-[var(--vibrant-teal)] hover:bg-[var(--vibrant-teal)]/90">Key Features</Badge>
-                <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight text-[var(--charcoal-gray)]">What Makes Us Different</h2>
-                <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed text-[var(--charcoal-gray)]">
-                  To The Pub is a hyper-focused nightlife discovery platform that helps you find exactly what you&rsquo;re
-                  looking for.
-                </p>
-              </div>
-            </div>
-            <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-3 lg:gap-12">
-              <Card className="border-[var(--light-gray)] hover:border-[var(--vibrant-teal)] transition-colors text-[var(--charcoal-gray)]" >
-                <CardHeader>
-                  <Clock className="h-10 w-10 text-[var(--vibrant-teal)] mb-2" />
-                  <CardTitle>Real-Time Event Discovery</CardTitle>
-                  <CardDescription>
-                    Find out what&rsquo;s happening right now at venues near you, with up-to-date information.
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-              <Card className="border-[var(--light-gray)] hover:border-[var(--vibrant-teal)] transition-colors text-[var(--charcoal-gray)]">
-                <CardHeader>
-                  <Filter className="h-10 w-10 text-[var(--vibrant-teal)] mb-2" />
-                  <CardTitle>Precise Event Filtering</CardTitle>
-                  <CardDescription>
-                    Filter by specific event types, from live music genres to themed nights and drink specials.
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-              <Card className="border-[var(--light-gray)] hover:border-[var(--vibrant-teal)] transition-colors text-[var(--charcoal-gray)]">
-                <CardHeader>
-                  <Compass className="h-10 w-10 text-[var(--vibrant-teal)] mb-2" />
-                  <CardTitle>Bar Atmosphere Classification</CardTitle>
-                  <CardDescription>
-                    Find the perfect vibe with our detailed venue categorization system.
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-            </div>
-          </div>
-        </section>
-
-        {/* Bar Types Section */}
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-[var(--dark-sapphire)] text-white">
-          <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
-                <Badge className="bg-[var(--goldenrod)] text-[var(--dark-sapphire)] hover:bg-[var(--goldenrod)]/90">Venue Types</Badge>
-                <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">Find Your Perfect Atmosphere</h2>
-                <p className="mx-auto max-w-[700px] text-gray-200 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  We categorize venues to help you find exactly the atmosphere you&rsquo;re looking for.
-                </p>
-              </div>
-            </div>
-            <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 md:grid-cols-2 lg:grid-cols-4">
-              <div className="flex flex-col items-center text-center">
-                <Beer className="h-12 w-12 text-[var(--vibrant-teal)] mb-2" />
-                <h3 className="text-xl font-bold">Dive Bar</h3>
-                <p className="text-gray-300">Casual, unpretentious spots with character</p>
-              </div>
-              <div className="flex flex-col items-center text-center">
-                <Cocktail className="h-12 w-12 text-[var(--vibrant-teal)] mb-2" />
-                <h3 className="text-xl font-bold">Cocktail Lounge</h3>
-                <p className="text-gray-300">Sophisticated venues with craft cocktails</p>
-              </div>
-              <div className="flex flex-col items-center text-center">
-                <Wine className="h-12 w-12 text-[var(--vibrant-teal)] mb-2" />
-                <h3 className="text-xl font-bold">Wine Bar</h3>
-                <p className="text-gray-300">Elegant spaces focused on wine selection</p>
-              </div>
-              <div className="flex flex-col items-center text-center">
-                <Music className="h-12 w-12 text-[var(--vibrant-teal)] mb-2" />
-                <h3 className="text-xl font-bold">Club</h3>
-                <p className="text-gray-300">High-energy venues with dancing and DJs</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* For Users Section */}
-        <section id="for-users" className="w-full py-12 md:py-24 lg:py-32 bg-white">
-          <div className="container px-4 md:px-6">
-            <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
-              <div className="flex flex-col justify-center space-y-4">
-                <div className="space-y-2">
-                  <Badge className="inline-flex bg-[var(--vibrant-teal)] hover:bg-[var(--vibrant-teal)]/90">For Users</Badge>
-                  <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight text-[var(--charcoal-gray)]">
-                    Discover Events That Match Your Vibe
-                  </h2>
-                  <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed text text-[var(--charcoal-gray)]">
-                    Whether you&rsquo;re a Social Experience Seeker or an Event-Driven Socializer, To The Pub helps you find
-                    exactly what you&rsquo;re looking for.
-                  </p>
-                </div>
-                <div className="space-y-4">
-                  <div className="flex items-start gap-4">
-                    <div className="rounded-full bg-[var(--vibrant-teal)]/10 p-2">
-                      <Search className="h-5 w-5 text-[var(--vibrant-teal)]" />
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-[var(--charcoal-gray)]">Event-Centric Search</h3>
-                      <p className="text-muted-foreground text-[var(--charcoal-gray)]">
-                        Find specific events like live jazz, trivia nights, or happy hours
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <div className="rounded-full bg-[var(--vibrant-teal)]/10 p-2">
-                      <MapPin className="h-5 w-5 text-[var(--vibrant-teal)]" />
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-[var(--charcoal-gray)]">Location-Based Discovery</h3>
-                      <p className="text-muted-foreground text-[var(--charcoal-gray)]">Find venues and events near you, wherever you are</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <div className="rounded-full bg-[var(--vibrant-teal)]/10 p-2">
-                      <Calendar className="h-5 w-5 text-[var(--vibrant-teal)]" />
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-[var(--charcoal-gray)]">Real-Time Updates</h3>
-                      <p className="text-muted-foreground text-[var(--charcoal-gray)]">See what&rsquo;s happening tonight or plan for the weekend</p>
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <a href="https://apps.apple.com/us/app/to-the-pub/id6763960326" target="_blank" rel="noopener noreferrer">
-                    <Button className="bg-[var(--vibrant-teal)] hover:bg-[var(--vibrant-teal)]/90 text-white">Download App</Button>
-                  </a>
-                </div>
-              </div>
-              <div className="mx-auto flex items-center justify-center">
-                <Tabs defaultValue="events" className="w-full max-w-[400px]">
-                  <TabsList className="grid w-full grid-cols-2 bg-[var(--light-gray)]">
-                    <TabsTrigger value="events" className="text-[var(--charcoal-gray)] data-[state=active]:bg-white data-[state=active]:text-[var(--charcoal-gray)]">Events</TabsTrigger>
-                    <TabsTrigger value="venues" className="text-[var(--charcoal-gray)] data-[state=active]:bg-white data-[state=active]:text-[var(--charcoal-gray)]">Venues</TabsTrigger>
-                  </TabsList>
-                  <TabsContent value="events" className="mt-4 space-y-4">
-                    <div className="rounded-lg border p-4">
-                      <div className="flex items-center justify-between">
-                        <div>
-                          <h4 className="font-bold text-[var(--charcoal-gray)]">Live Jazz Night</h4>
-                          <p className="text-sm text-muted-foreground text-[var(--charcoal-gray)]">The Blue Note</p>
-                        </div>
-                        <Badge className="bg-[var(--goldenrod)] text-[var(--dark-sapphire)] hover:bg-[var(--goldenrod)]/90">Tonight</Badge>
-                      </div>
-                      <div className="mt-2 flex items-center gap-2 text-sm text-muted-foreground">
-                        <Clock className="h-4 w-4 text-[var(--charcoal-gray)]" />
-                        <span className="text-[var(--charcoal-gray)]">8:00 PM - 11:00 PM</span>
-                      </div>
-                      <div className="mt-3 flex gap-2">
-                        <Badge variant="outline" className="border-[var(--vibrant-teal)] text-[var(--vibrant-teal)]">
-                          Live Music
-                        </Badge>
-                        <Badge variant="outline" className="border-[var(--vibrant-teal)] text-[var(--vibrant-teal)]">
-                          Jazz
-                        </Badge>
-                      </div>
-                    </div>
-                    <div className="rounded-lg border p-4">
-                      <div className="flex items-center justify-between">
-                        <div>
-                          <h4 className="font-bold text-[var(--charcoal-gray)]">Trivia Night</h4>
-                          <p className="text-sm text-muted-foreground text-[var(--charcoal-gray)]">The Local Tavern</p>
-                        </div>
-                        <Badge className="bg-[var(--vibrant-teal)] hover:bg-[var(--vibrant-teal)]/90">Tomorrow</Badge>
-                      </div>
-                      <div className="mt-2 flex items-center gap-2 text-sm text-muted-foreground">
-                        <Clock className="h-4 w-4 text-[var(--charcoal-gray)]" />
-                        <span className="text-[var(--charcoal-gray)]">7:00 PM - 9:00 PM</span>
-                      </div>
-                      <div className="mt-3 flex gap-2">
-                        <Badge variant="outline" className="border-[var(--vibrant-teal)] text-[var(--vibrant-teal)]">
-                          Game Night
-                        </Badge>
-                        <Badge variant="outline" className="border-[var(--vibrant-teal)] text-[var(--vibrant-teal)]">
-                          Trivia
-                        </Badge>
-                      </div>
-                    </div>
-                  </TabsContent>
-                  <TabsContent value="venues" className="mt-4 space-y-4">
-                    <div className="rounded-lg border p-4">
-                      <div>
-                        <h4 className="font-bold text-[var(--charcoal-gray)]">The Speakeasy</h4>
-                        <p className="text-sm text-muted-foreground text-[var(--charcoal-gray)]">Cocktail Lounge</p>
-                      </div>
-                      <div className="mt-2 flex items-center gap-2 text-sm text-muted-foreground">
-                        <MapPin className="h-4 w-4 text-[var(--charcoal-gray)]" />
-                        <span className="text-[var(--charcoal-gray)]">0.5 miles away</span>
-                      </div>
-                      <div className="mt-3 flex gap-2">
-                        <Badge variant="outline" className="border-[var(--vibrant-teal)] text-[var(--vibrant-teal)]">
-                          Craft Cocktails
-                        </Badge>
-                        <Badge variant="outline" className="border-[var(--vibrant-teal)] text-[var(--vibrant-teal)]">
-                          Live Piano
-                        </Badge>
-                      </div>
-                    </div>
-                    <div className="rounded-lg border p-4">
-                      <div>
-                        <h4 className="font-bold text-[var(--charcoal-gray)]">Hopworks Brewery</h4>
-                        <p className="text-sm text-muted-foreground text-[var(--charcoal-gray)]">Brewery</p>
-                      </div>
-                      <div className="mt-2 flex items-center gap-2 text-sm text-muted-foreground">
-                        <MapPin className="h-4 w-4 text-[var(--charcoal-gray)]" />
-                        <span className="text-[var(--charcoal-gray)]">1.2 miles away</span>
-                      </div>
-                      <div className="mt-3 flex gap-2">
-                        <Badge variant="outline" className="border-[var(--vibrant-teal)] text-[var(--vibrant-teal)]">
-                          Craft Beer
-                        </Badge>
-                        <Badge variant="outline" className="border-[var(--vibrant-teal)] text-[var(--vibrant-teal)]">
-                          Food Menu
-                        </Badge>
-                      </div>
-                    </div>
-                  </TabsContent>
-                </Tabs>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Event Categories Section */}
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-[var(--charcoal-gray)] text-white">
-          <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
-                <Badge className="bg-[var(--goldenrod)] text-[var(--dark-sapphire)] hover:bg-[var(--goldenrod)]/90">Event Categories</Badge>
-                <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
-                  Find Events That Match Your Mood
-                </h2>
-                <p className="mx-auto max-w-[700px] text-gray-200 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Our comprehensive event categories help you discover exactly what you&rsquo;re looking for.
-                </p>
-              </div>
-            </div>
-            <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 md:grid-cols-2 lg:grid-cols-3">
-              <Card className="bg-[var(--dark-sapphire)] border-[var(--vibrant-teal)] text-white">
-                <CardHeader>
-                  <Music className="h-10 w-10 text-[var(--vibrant-teal)] mb-2" />
-                  <CardTitle>Live Music</CardTitle>
-                  <CardDescription className="text-gray-300">Jazz, Rock, Folk, and more</CardDescription>
-                </CardHeader>
-              </Card>
-              <Card className="bg-[var(--dark-sapphire)] border-[var(--vibrant-teal)] text-white">
-                <CardHeader>
-                  <Mic className="h-10 w-10 text-[var(--vibrant-teal)] mb-2" />
-                  <CardTitle>Performance</CardTitle>
-                  <CardDescription className="text-gray-300">Karaoke, Comedy, Open Mic</CardDescription>
-                </CardHeader>
-              </Card>
-              <Card className="bg-[var(--dark-sapphire)] border-[var(--vibrant-teal)] text-white">
-                <CardHeader>
-                  <Gamepad2 className="h-10 w-10 text-[var(--vibrant-teal)] mb-2" />
-                  <CardTitle>Themed Nights</CardTitle>
-                  <CardDescription className="text-gray-300">Trivia, Game Nights</CardDescription>
-                </CardHeader>
-              </Card>
-              <Card className="bg-[var(--dark-sapphire)] border-[var(--vibrant-teal)] text-white">
-                <CardHeader>
-                  <Music className="h-10 w-10 text-[var(--vibrant-teal)] mb-2" />
-                  <CardTitle>Music Events</CardTitle>
-                  <CardDescription className="text-gray-300">DJ Performances, Live Bands</CardDescription>
-                </CardHeader>
-              </Card>
-              <Card className="bg-[var(--dark-sapphire)] border-[var(--vibrant-teal)] text-white">
-                <CardHeader>
-                  <Beer className="h-10 w-10 text-[var(--vibrant-teal)] mb-2" />
-                  <CardTitle>Drink Specials</CardTitle>
-                  <CardDescription className="text-gray-300">Happy Hour, Tasting Events</CardDescription>
-                </CardHeader>
-              </Card>
-              <Card className="bg-[var(--dark-sapphire)] border-[var(--vibrant-teal)] text-white">
-                <CardHeader>
-                  <Star className="h-10 w-10 text-[var(--vibrant-teal)] mb-2" />
-                  <CardTitle>Special Events</CardTitle>
-                  <CardDescription className="text-gray-300">Holiday parties, Celebrations</CardDescription>
-                </CardHeader>
-              </Card>
-            </div>
-          </div>
-        </section>
-
-        {/* For Businesses Section */}
-        <section id="for-businesses" className="w-full py-12 md:py-24 lg:py-32">
-          <div className="container px-4 md:px-6">
-            <div className="grid gap-6 lg:grid-cols-[400px_1fr] lg:gap-12 xl:grid-cols-[600px_1fr]">
-              <div className="mx-auto flex items-center justify-center">
-                <div className="space-y-6">
-                  <div className="rounded-lg border p-6 shadow-sm">
-                    <div className="flex items-center gap-4">
-                      <div className="rounded-full bg-[var(--vibrant-teal)]/10 p-3">
-                        <Users className="h-6 w-6 text-[var(--vibrant-teal)]" />
-                      </div>
-                      <div>
-                        <h3 className="font-bold">Reach New Customers</h3>
-                        <p className="text-sm text-muted-foreground">
-                          Connect with users actively looking for your type of venue
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="rounded-lg border p-6 shadow-sm">
-                    <div className="flex items-center gap-4">
-                      <div className="rounded-full bg-[var(--vibrant-teal)]/10 p-3">
-                        <Calendar className="h-6 w-6 text-[var(--vibrant-teal)]" />
-                      </div>
-                      <div>
-                        <h3 className="font-bold">Promote Your Events</h3>
-                        <p className="text-sm text-muted-foreground">
-                          Showcase your events to users searching for specific experiences
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="rounded-lg border p-6 shadow-sm">
-                    <div className="flex items-center gap-4">
-                      <div className="rounded-full bg-[var(--vibrant-teal)]/10 p-3">
-                        <Star className="h-6 w-6 text-[var(--vibrant-teal)]" />
-                      </div>
-                      <div>
-                        <h3 className="font-bold">Highlight Your Unique Atmosphere</h3>
-                        <p className="text-sm text-muted-foreground">
-                          Stand out with our detailed venue categorization system
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="flex flex-col justify-center space-y-4">
-                <div className="space-y-2">
-                  <Badge className="inline-flex bg-[var(--vibrant-teal)] hover:bg-[var(--vibrant-teal)]/90">For Businesses</Badge>
-                  <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
-                    Grow Your Business With To The Pub
-                  </h2>
-                  <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                    Connect with customers looking for exactly what your venue offers. Our platform helps you showcase
-                    your events and unique atmosphere.
-                  </p>
-                </div>
-                <div className="space-y-4">
-                  <p className="text-muted-foreground">With our Venue Event Input Portal, you can:</p>
-                  <ul className="space-y-2">
-                    <li className="flex items-center gap-2">
-                      <ArrowRight className="h-4 w-4 text-[var(--vibrant-teal)]" />
-                      <span>Manage your venue profile and atmosphere categorization</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <ArrowRight className="h-4 w-4 text-[var(--vibrant-teal)]" />
-                      <span>Add and update events in real-time</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <ArrowRight className="h-4 w-4 text-[var(--vibrant-teal)]" />
-                      <span>Access basic analytics about user interest</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <ArrowRight className="h-4 w-4 text-[var(--vibrant-teal)]" />
-                      <span>Tag events with specific categories to reach interested users</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
-
-      {/* Footer */}
-      <footer className="w-full border-t bg-background py-6">
-        <div className="container px-4 md:px-6">
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-            <div className="space-y-4">
-              <div className="flex items-center gap-2">
-                <Beer className="h-6 w-6 text-[var(--vibrant-teal)]" />
-                <span className="text-xl font-bold">To The Pub</span>
-              </div>
-              <p className="text-sm text-muted-foreground">
-                Discover your perfect night out with our nightlife discovery platform.
-              </p>
-            </div>
-            <div>
-              <h3 className="mb-4 text-lg font-medium">Quick Links</h3>
-              <ul className="space-y-2 text-sm">
-                <li>
-                  <Link href="\the-app" className="text-muted-foreground hover:text-[var(--vibrant-teal)] transition-colors">
-                    The App
-                  </Link>
-                </li>
-                <li>
-                  <Link href="\the-business" className="text-muted-foreground hover:text-[var(--vibrant-teal)] transition-colors">
-                    For Businesses
-                  </Link>
-                </li>
-                <li>
-                  <Link href="\about" className="text-muted-foreground hover:text-[var(--vibrant-teal)] transition-colors">
-                    About
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="mb-4 text-lg font-medium">Legal</h3>
-              <ul className="space-y-2 text-sm">
-                <li>
-                  <Link href="/privacy-policy" className="text-muted-foreground hover:text-[var(--vibrant-teal)] transition-colors">
-                    Privacy Policy
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="text-muted-foreground hover:text-[var(--vibrant-teal)] transition-colors">
-                    Terms of Service
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="text-muted-foreground hover:text-[var(--vibrant-teal)] transition-colors">
-                    Cookie Policy
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="mb-4 text-lg font-medium">Contact</h3>
-              <ul className="space-y-2 text-sm">
-                <li>
-                  <Link
-                    href="mailto:tothepub.contact@gmail.com"
-                    className="text-muted-foreground hover:text-[var(--vibrant-teal)] transition-colors"
-                  >
-                    tothepub.contact@gmail.com
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="text-muted-foreground hover:text-[var(--vibrant-teal)] transition-colors">
-                    Support
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="mt-8 border-t pt-6">
-            <p className="text-center text-xs text-muted-foreground">
-              © {new Date().getFullYear()} To The Pub. All rights reserved.
+      {/* Hero */}
+      <section className={styles.heroSection}>
+        <div className={styles.container}>
+          <div className={styles.heroInner}>
+            <h1 className={styles.heroTitle}>
+              Find Your Perfect{" "}
+              <span className={styles.heroTitleAccent}>Night Out</span>
+            </h1>
+            <p className={styles.heroSubtext}>
+              Discover bars, pubs, and events near you. From live music to trivia nights, To The Pub connects you with the nightlife you love.
             </p>
+            <div className={styles.heroActions}>
+              <a
+                href="https://apps.apple.com/us/app/to-the-pub/id6763960326"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`${styles.btn} ${styles.btnLg} ${styles.btnTeal}`}
+              >
+                Download the App
+              </a>
+              <Link
+                href="/the-business"
+                className={`${styles.btn} ${styles.btnLg} ${styles.btnOutline}`}
+              >
+                For Businesses
+              </Link>
+            </div>
           </div>
         </div>
-      </footer>
+      </section>
+
+      {/* Features */}
+      <section className={styles.featuresSection}>
+        <div className={styles.container}>
+          <div className={styles.sectionHeader}>
+            <span className={`${styles.badge} ${styles.badgeTeal}`}>Features</span>
+            <h2 className={styles.sectionTitle}>Everything you need for a great night</h2>
+            <p className={styles.sectionSubtext}>
+              Whether you&rsquo;re planning ahead or deciding on the fly, we&rsquo;ve got you covered.
+            </p>
+          </div>
+          <div className={styles.featuresGrid}>
+            <div className={styles.featureCard}>
+              <div className={styles.featureIconWrap}>
+                <MapPin size={24} className={styles.tealIcon} />
+              </div>
+              <p className={styles.featureCardTitle}>Discover Open Bars</p>
+              <p className={styles.featureCardText}>Find open spots nearby with filters for atmosphere, activities (darts, pool, live music), and service types.</p>
+            </div>
+            <div className={styles.featureCard}>
+              <div className={styles.featureIconWrap}>
+                <Calendar size={24} className={styles.tealIcon} />
+              </div>
+              <p className={styles.featureCardTitle}>Find Live Events</p>
+              <p className={styles.featureCardText}>Never miss out. Filter for upcoming DJ sets, exclusive drink specials, and the best happy hours in town.</p>
+            </div>
+            <div className={styles.featureCard}>
+              <div className={styles.featureIconWrap}>
+                <Search size={24} className={styles.tealIcon} />
+              </div>
+              <p className={styles.featureCardTitle}>Personalized Search</p>
+              <p className={styles.featureCardText}>Looking for something specific? Search our database of local establishments instantly.</p>
+            </div>
+            <div className={styles.featureCard}>
+              <div className={styles.featureIconWrap}>
+                <Notebook size={24} className={styles.tealIcon} />
+              </div>
+              <p className={styles.featureCardTitle}>Coming Soon: Log Your Rounds</p>
+              <p className={styles.featureCardText}>Track your journey by marking bars you&rsquo;ve visited and leaving tips for the community.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* For Users */}
+      <section className={styles.usersSection}>
+        <div className={styles.container}>
+          <div className={styles.splitGrid}>
+            <div className={styles.splitContent}>
+              <h2 className={styles.splitTitle}>Stop scrolling. Start going.</h2>
+              <p className={styles.splitText}>
+                No more guessing what&rsquo;s on tonight. To The Pub surfaces the best bars and events that match your vibe — so you spend less time searching and more time out.
+              </p>
+              <ul className={styles.bulletList}>
+                <li className={styles.bulletItem}>
+                  <Dot size={20} className={styles.goldIcon} />
+                  <span>Personalised picks based on what you&rsquo;re into</span>
+                </li>
+                <li className={styles.bulletItem}>
+                  <Dot size={20} className={styles.goldIcon} />
+                  <span>Filter by event type — live music, sports, quiz nights &amp; more</span>
+                </li>
+                <li className={styles.bulletItem}>
+                  <Dot size={20} className={styles.goldIcon} />
+                  <span>Detailed venue pages with hours, tags, and upcoming events</span>
+                </li>
+              </ul>
+              <div>
+                <a
+                  href="https://apps.apple.com/us/app/to-the-pub/id6763960326"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`${styles.btn} ${styles.btnTeal}`}
+                >
+                  Download Free
+                </a>
+              </div>
+            </div>
+
+            <div className={styles.eventCards}>
+              <div className={styles.eventCard}>
+                <div>
+                  <p className={styles.eventCardTitle}>Layla&rsquo;s American Tavern</p>
+                  <p className={styles.eventCardVenue}>Boston, MA</p>
+                </div>
+                <div className={styles.eventCardTime}>
+                  <MapPin size={14} className={styles.tealIcon} />
+                  <span>0.13 mi away &middot; Closes 1:00 AM</span>
+                </div>
+                <div className={styles.eventCardTags}>
+                  <span className={`${styles.badge} ${styles.badgeOutlineTeal}`}>Restaurant</span>
+                  <span className={`${styles.badge} ${styles.badgeOutlineTeal}`}>Outdoor Seating</span>
+                  <span className={`${styles.badge} ${styles.badgeOutlineTeal}`}>Food Service</span>
+                  <span className={`${styles.badge} ${styles.badgeOutlineTeal}`}>Touch Tunes</span>
+                </div>
+                <div className={styles.cardSocialRow}>
+                  <div className={styles.cardSocial}>
+                    <Instagram size={18} className={styles.socialIcon} />
+                  </div>
+                  <div className={styles.cardSocial}>
+                    <Facebook size={18} className={styles.socialIcon} />
+                  </div>
+                </div>
+              </div>
+
+              <div className={styles.eventCard}>
+                <div>
+                  <p className={styles.eventCardTitle}>Tom English&rsquo;s Cottage</p>
+                  <p className={styles.eventCardVenue}>Boston, MA</p>
+                </div>
+                <div className={styles.eventCardTime}>
+                  <MapPin size={14} className={styles.tealIcon} />
+                  <span>0.31 mi away &middot; Closes 1:00 AM</span>
+                </div>
+                <div className={styles.eventCardTags}>
+                  <span className={`${styles.badge} ${styles.badgeOutlineTeal}`}>Pub</span>
+                  <span className={`${styles.badge} ${styles.badgeOutlineTeal}`}>Billards</span>
+                  <span className={`${styles.badge} ${styles.badgeOutlineTeal}`}>Touch Tunes</span>
+                  <span className={`${styles.badge} ${styles.badgeOutlineTeal}`}>Darts</span>
+                </div>
+                <div className={styles.cardSocialRow}>
+                  <div className={styles.cardSocial}>
+                    <Instagram size={18} className={styles.socialIcon} />
+                  </div>
+                  <div className={styles.cardSocial}>
+                    <Facebook size={18} className={styles.socialIcon} />
+                  </div>
+                </div>
+              </div>
+
+              <div className={styles.eventCard}>
+                <div>
+                  <p className={styles.eventCardTitle}>4th Wall Resturant & Bar</p>
+                  <p className={styles.eventCardVenue}>Boston, MA</p>
+                </div>
+                <div className={styles.eventCardTime}>
+                  <MapPin size={14} className={styles.tealIcon} />
+                  <span>0.94 mi away &middot; Closes 2:00 AM</span>
+                </div>
+                <div className={styles.eventCardTags}>
+                  <span className={`${styles.badge} ${styles.badgeOutlineTeal}`}>Pub</span>
+                  <span className={`${styles.badge} ${styles.badgeOutlineTeal}`}>Food Service</span>
+                  <span className={`${styles.badge} ${styles.badgeOutlineTeal}`}>Touch Tunes</span>
+                </div>
+                <div className={styles.cardSocialRow}>
+                  <div className={styles.cardSocial}>
+                    <Instagram size={18} className={styles.socialIcon} />
+                  </div>
+                  <div className={styles.cardSocial}>
+                    <Facebook size={18} className={styles.socialIcon} />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* For Businesses */}
+      <section className={styles.businessSection}>
+        <div className={styles.container}>
+          <div className={styles.splitGrid}>
+            <div className={styles.statsGrid}>
+              <div className={styles.statCard}>
+                <Users size={32} className={styles.tealIcon} />
+                <p className={styles.statCardTitle}>More Reach</p>
+                <p className={styles.statCardText}>Appear in searches from people actively looking for venues like yours</p>
+              </div>
+              <div className={styles.statCard}>
+                <BarChart2 size={32} className={styles.tealIcon} />
+                <p className={styles.statCardTitle}>Easy Mgmt</p>
+                <p className={styles.statCardText}>Update your events, hours, and tags from one simple dashboard</p>
+              </div>
+              <div className={styles.statCard}>
+                <Bell size={32} className={styles.tealIcon} />
+                <p className={styles.statCardTitle}>Stay Current</p>
+                <p className={styles.statCardText}>Push last-minute events and keep your listing accurate in real time</p>
+              </div>
+              <div className={styles.statCard}>
+                <MapPin size={32} className={styles.tealIcon} />
+                <p className={styles.statCardTitle}>Local First</p>
+                <p className={styles.statCardText}>Connect with your community — the people most likely to walk through your door</p>
+              </div>
+            </div>
+
+            <div className={styles.splitContent}>
+              <span className={`${styles.badge} ${styles.badgeGold}`}>For Venues</span>
+              <h2 className={styles.splitTitle}>Grow your crowd, not your workload.</h2>
+              <p className={styles.splitText}>
+                List your bar or pub on To The Pub and reach customers who are actively looking for venues and events exactly like yours — for free.
+              </p>
+              <ul className={styles.bulletList}>
+                <li className={styles.bulletItem}>
+                  <Dot size={20} className={styles.goldIcon} />
+                  <span>Create and manage events directly from your dashboard</span>
+                </li>
+                <li className={styles.bulletItem}>
+                  <Dot size={20} className={styles.goldIcon} />
+                  <span>Tag your venue so the right crowd finds you</span>
+                </li>
+                <li className={styles.bulletItem}>
+                  <Dot size={20} className={styles.goldIcon} />
+                  <span>Keep hours and listings up-to-date in minutes</span>
+                </li>
+              </ul>
+              <div>
+                <Link href="/the-business" className={`${styles.btn} ${styles.btnGold}`}>
+                  Learn More
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Download CTA */}
+      <section className={styles.ctaSection}>
+        <div className={styles.ctaInner}>
+          <h2 className={styles.ctaTitle}>Ready for your next great night?</h2>
+          <p className={styles.ctaSubtext}>
+            Download To The Pub and discover what&rsquo;s on near you tonight.
+          </p>
+          <a
+            href="https://apps.apple.com/us/app/to-the-pub/id6763960326"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`${styles.btn} ${styles.btnLg} ${styles.btnTeal}`}
+          >
+            Download on the App Store
+          </a>
+        </div>
+      </section>
+
     </div>
   )
 }
