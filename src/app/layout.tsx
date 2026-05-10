@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ConditionalNavbar } from "../components/layouts/ConditionalNavbar"
+import { ConditionalFooter } from "../components/layouts/ConditionalFooter"
 import { AuthProvider } from "@/contexts/AuthContext";
 import { ToastProvider } from "@/components/ui/toast-provider";
 
@@ -34,6 +35,7 @@ export default function RootLayout({
             <main className="main-content">
               {children}
             </main>
+            <ConditionalFooter />
           </div>
           <ToastProvider />
         </AuthProvider>
