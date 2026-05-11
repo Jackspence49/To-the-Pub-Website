@@ -23,9 +23,6 @@ export default function TheBusiness() {
             {/* Hero */}
             <section className="w-full py-16 md:py-24">
                 <div className="container px-4 md:px-6 mx-auto text-center space-y-6">
-                    <Badge className="inline-flex bg-[var(--goldenrod)] text-[var(--dark-sapphire)] hover:bg-[var(--goldenrod)]/90">
-                        For Businesses
-                    </Badge>
                     <h1 className="text-4xl font-bold tracking-tighter md:text-5xl/tight">
                         Your venue. Your rules.
                     </h1>
