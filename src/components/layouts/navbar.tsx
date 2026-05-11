@@ -31,7 +31,7 @@ export function PublicNavbar() {
     return (
       <div>
         {/* Header */}
-        <header className="sticky top-0 z-40 w-full border-b bg-white">
+        <header className="sticky top-0 z-40 w-full bg-white">
           <div className="relative flex h-20 md:h-24 items-center px-4 md:px-8">
             {/* Left - Logo */}
             <div className="flex items-center">

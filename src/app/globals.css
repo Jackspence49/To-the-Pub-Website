@@ -1,30 +1,60 @@
 @import "tailwindcss";
 
+/* Maps shadcn CSS variables to Tailwind v4's --color-* utility namespace */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+}
+
 :root {
-  /* Primary Colors */
+  /* Brand Colors */
   --dark-sapphire: #212121;
   --charcoal-gray: #757575;
-  
-  /* Accent Colors */
   --vibrant-teal: #1976D2;
   --goldenrod: #FFC107;
-  
-  /* Neutral Colors */
   --light-gray: #F5F5F5;
   --white: #FFFFFF;
-  
-  /* Typography Colors */
+
+  /* Typography */
   --text-on-dark: #FFFFFF;
   --text-on-light: #212121;
   --text-accent: #1976D2;
-  
-  /* Theme Colors */
-  --background: var(--dark-sapphire);
-  --foreground: var(--text-on-dark);
-  --card-background: var(--charcoal-gray);
+
+  /* Light theme (site-wide default) */
+  --background: #FFFFFF;
+  --foreground: #212121;
+  --card: #FFFFFF;
+  --card-foreground: #212121;
+  --muted: #F5F5F5;
+  --muted-foreground: #757575;
+  --border: #E5E7EB;
+  --input: #E5E7EB;
+  --ring: #1976D2;
+  --primary: #1976D2;
+  --primary-foreground: #FFFFFF;
+  --secondary: #F5F5F5;
+  --secondary-foreground: #212121;
+  --accent-foreground: #212121;
+  --destructive: #EF4444;
+
+  /* Legacy aliases */
+  --card-background: var(--card);
   --accent: var(--vibrant-teal);
   --secondary-accent: var(--goldenrod);
-  --border-color: var(--light-gray);
+  --border-color: var(--border);
 }
 
 body {

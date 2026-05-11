@@ -42,8 +42,8 @@
 }
 
 .badgeGray {
-  background-color: #e5e7eb;
-  color: #4b5563;
+  background-color: var(--border);
+  color: var(--muted-foreground);
 }
 
 .badgeOutlineTeal {
@@ -114,7 +114,7 @@
 .heroSection {
   width: 100%;
   padding: 4rem 1rem;
-  background: white;
+  background: var(--background);
 }
 
 @media (min-width: 768px) {
@@ -173,7 +173,7 @@
 .heroSubtext {
   max-width: 40rem;
   font-size: 1.125rem;
-  color: #6b7280;
+  color: var(--muted-foreground);
   margin: 0;
 }
 
@@ -201,7 +201,7 @@
 .featuresSection {
   width: 100%;
   padding: 3rem 1rem;
-  background: #f9fafb;
+  background: var(--muted);
 }
 
 @media (min-width: 768px) {
@@ -235,7 +235,7 @@
 
 .sectionSubtext {
   max-width: 35rem;
-  color: #6b7280;
+  color: var(--muted-foreground);
   margin: 0;
 }
 
@@ -265,8 +265,8 @@
   gap: 0.75rem;
   padding: 1.5rem;
   border-radius: 0.75rem;
-  background: white;
-  border: 2px solid #f3f4f6;
+  background: var(--card);
+  border: 2px solid var(--border);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
@@ -277,7 +277,7 @@
   width: 3rem;
   height: 3rem;
   border-radius: 9999px;
-  background-color: rgba(0, 184, 212, 0.1);
+  background-color: color-mix(in srgb, var(--vibrant-teal) 10%, transparent);
 }
 
 .featureCardTitle {
@@ -289,7 +289,7 @@
 
 .featureCardText {
   font-size: 0.875rem;
-  color: #6b7280;
+  color: var(--muted-foreground);
   margin: 0;
 }
 
@@ -298,7 +298,7 @@
 .usersSection {
   width: 100%;
   padding: 3rem 1rem;
-  background: white;
+  background: var(--background);
 }
 
 @media (min-width: 768px) {
@@ -341,7 +341,7 @@
 }
 
 .splitText {
-  color: #6b7280;
+  color: var(--muted-foreground);
   margin: 0;
 }
 
@@ -364,7 +364,7 @@
   display: flex;
   align-items: flex-start;
   gap: 0.75rem;
-  color: #4b5563;
+  color: var(--muted-foreground);
 }
 
 /* Event Cards */
@@ -379,7 +379,7 @@
 }
 
 .eventCard {
-  background: white;
+  background: var(--card);
   border: 1px solid var(--dark-sapphire);
   border-radius: 0.75rem;
   padding: 1.25rem;
@@ -452,7 +452,7 @@
 .businessSection {
   width: 100%;
   padding: 3rem 1rem;
-  background: #f9fafb;
+  background: var(--muted);
 }
 
 @media (min-width: 768px) {
@@ -474,8 +474,8 @@
   text-align: center;
   gap: 0.5rem;
   padding: 1.5rem;
-  background: white;
-  border: 1px solid #f3f4f6;
+  background: var(--card);
+  border: 1px solid var(--border);
   border-radius: 0.75rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
@@ -489,7 +489,7 @@
 
 .statCardText {
   font-size: 0.875rem;
-  color: #6b7280;
+  color: var(--muted-foreground);
   margin: 0;
 }
 
@@ -498,7 +498,7 @@
 .ctaSection {
   width: 100%;
   padding: 4rem 1rem;
-  background: var(--dark-sapphire);
+  background: color-mix(in srgb, var(--vibrant-teal) 10%, var(--background));
 }
 
 @media (min-width: 768px) {
@@ -521,7 +521,7 @@
   font-size: 1.875rem;
   font-weight: 700;
   letter-spacing: -0.025em;
-  color: white;
+  color: var(--foreground);
   margin: 0;
 }
 
@@ -533,6 +533,6 @@
 
 .ctaSubtext {
   font-size: 1.125rem;
-  color: rgba(224, 224, 224, 0.8);
+  color: var(--muted-foreground);
   margin: 0;
 }
