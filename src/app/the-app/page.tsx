@@ -12,6 +12,24 @@ import {
     Star,
 } from "lucide-react"
 
+function InstagramIcon({ className }: { className?: string }) {
+    return (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+            <circle cx="12" cy="12" r="4" />
+            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+        </svg>
+    )
+}
+
+function FacebookIcon({ className }: { className?: string }) {
+    return (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+        </svg>
+    )
+}
+
 export default function TheApp() {
     return (
         <main className="w-full">
@@ -19,7 +37,6 @@ export default function TheApp() {
             {/* Page Hero */}
             <section className="w-full py-16 md:py-24">
                 <div className="container px-4 md:px-6 mx-auto text-center">
-                    <Badge className="inline-flex bg-[var(--vibrant-teal)] hover:bg-[var(--vibrant-teal)]/90 mb-4">The App</Badge>
                     <h1 className="text-4xl font-bold tracking-tighter md:text-5xl/tight mb-4">
                         Everything you need for a great night out
                     </h1>
@@ -35,7 +52,6 @@ export default function TheApp() {
                     <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
                         <div className="flex flex-col justify-center space-y-4">
                             <div className="space-y-2">
-                                <Badge className="inline-flex bg-[var(--vibrant-teal)] hover:bg-[var(--vibrant-teal)]/90">For Users</Badge>
                                 <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
                                     Discover Events That Match Your Vibe
                                 </h2>
@@ -44,6 +60,15 @@ export default function TheApp() {
                                     exactly what you&rsquo;re looking for.
                                 </p>
                             </div>
+                            <div className="flex items-start gap-4">
+                                <div className="rounded-full bg-[var(--vibrant-teal)]/10 p-2">
+                                    <MapPin className="h-5 w-5 text-[var(--vibrant-teal)]" />
+                                </div>
+                                 <div>
+                                     <h3 className="font-bold">Location-Based Discovery</h3>
+                                     <p className="text-muted-foreground">Find venues and events near you, wherever you are</p>
+                                </div>
+                             </div>
                             <div className="space-y-4">
                                 <div className="flex items-start gap-4">
                                     <div className="rounded-full bg-[var(--vibrant-teal)]/10 p-2">
@@ -54,15 +79,6 @@ export default function TheApp() {
                                         <p className="text-muted-foreground">
                                             Find specific events like live jazz, trivia nights, or happy hours
                                         </p>
-                                    </div>
-                                </div>
-                                <div className="flex items-start gap-4">
-                                    <div className="rounded-full bg-[var(--vibrant-teal)]/10 p-2">
-                                        <MapPin className="h-5 w-5 text-[var(--vibrant-teal)]" />
-                                    </div>
-                                    <div>
-                                        <h3 className="font-bold">Location-Based Discovery</h3>
-                                        <p className="text-muted-foreground">Find venues and events near you, wherever you are</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-4">
@@ -82,94 +98,108 @@ export default function TheApp() {
                             </div>
                         </div>
                         <div className="mx-auto flex items-center justify-center">
-                            <Tabs defaultValue="events" className="w-full max-w-[400px]">
+                            <div className="rounded-xl border border-[var(--light-gray)]/30 p-4 w-full max-w-[400px]">
+                            <Tabs defaultValue="venues" className="w-full max-w-[400px]">
                                 <TabsList className="grid w-full grid-cols-2">
+                                    <TabsTrigger value="venues">Open Bars</TabsTrigger>
                                     <TabsTrigger value="events">Events</TabsTrigger>
-                                    <TabsTrigger value="venues">Venues</TabsTrigger>
                                 </TabsList>
-                                <TabsContent value="events" className="mt-4 space-y-4">
-                                    <div className="rounded-lg border p-4">
-                                        <div className="flex items-center justify-between">
+                                <div className="grid mt-4">
+                                <TabsContent forceMount value="events" className="row-start-1 col-start-1 mt-0 space-y-4 data-[state=inactive]:invisible data-[state=inactive]:pointer-events-none">
+                                    <div className="rounded-lg border p-4 space-y-2 min-h-[170px]">
+                                        <Badge className="bg-[var(--vibrant-teal)] hover:bg-[var(--vibrant-teal)]/90 text-xs uppercase tracking-wide">Live Music</Badge>
+                                        <h4 className="font-bold">Live Jazz Night</h4>
+                                        <div className="flex items-center gap-1.5 text-sm text-muted-foreground">
+                                            <MapPin className="h-4 w-4 text-[var(--vibrant-teal)]" />
+                                            <span>The Blue Note</span>
+                                        </div>
+                                        <span className="inline-block text-xs font-medium bg-[var(--light-gray)] text-[var(--vibrant-teal)] rounded-full px-2.5 py-0.5">0.3 miles away</span>
+                                        <div className="flex items-center gap-3">
+                                            <Clock className="h-4 w-4 text-[var(--vibrant-teal)] shrink-0" />
                                             <div>
-                                                <h4 className="font-bold">Live Jazz Night</h4>
-                                                <p className="text-sm text-muted-foreground">The Blue Note</p>
+                                                <p className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">Start</p>
+                                                <p className="text-sm font-bold">8:00 PM</p>
                                             </div>
-                                            <Badge className="bg-[var(--goldenrod)] text-[var(--dark-sapphire)] hover:bg-[var(--goldenrod)]/90">Tonight</Badge>
-                                        </div>
-                                        <div className="mt-2 flex items-center gap-2 text-sm text-muted-foreground">
-                                            <Clock className="h-4 w-4" />
-                                            <span>8:00 PM - 11:00 PM</span>
-                                        </div>
-                                        <div className="mt-3 flex gap-2">
-                                            <Badge variant="outline" className="border-[var(--vibrant-teal)] text-[var(--vibrant-teal)]">
-                                                Live Music
-                                            </Badge>
-                                            <Badge variant="outline" className="border-[var(--vibrant-teal)] text-[var(--vibrant-teal)]">
-                                                Jazz
-                                            </Badge>
+                                            <span className="text-muted-foreground">→</span>
+                                            <div>
+                                                <p className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">End</p>
+                                                <p className="text-sm font-bold">11:00 PM</p>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div className="rounded-lg border p-4">
-                                        <div className="flex items-center justify-between">
+                                    <div className="rounded-lg border p-4 space-y-2 min-h-[170px]">
+                                        <Badge className="bg-[var(--vibrant-teal)] hover:bg-[var(--vibrant-teal)]/90 text-white text-xs uppercase tracking-wide">Trivia</Badge>
+                                        <h4 className="font-bold">Trivia Night</h4>
+                                        <div className="flex items-center gap-1.5 text-sm text-muted-foreground">
+                                            <MapPin className="h-4 w-4 text-[var(--vibrant-teal)]" />
+                                            <span>The Local Tavern</span>
+                                        </div>
+                                        <span className="inline-block text-xs font-medium bg-[var(--light-gray)] text-[var(--vibrant-teal)] rounded-full px-2.5 py-0.5">0.8 miles away</span>
+                                        <div className="flex items-center gap-3">
+                                            <Clock className="h-4 w-4 text-[var(--vibrant-teal)] shrink-0" />
                                             <div>
-                                                <h4 className="font-bold">Trivia Night</h4>
-                                                <p className="text-sm text-muted-foreground">The Local Tavern</p>
+                                                <p className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">Start</p>
+                                                <p className="text-sm font-bold">7:00 PM</p>
                                             </div>
-                                            <Badge className="bg-[var(--vibrant-teal)] hover:bg-[var(--vibrant-teal)]/90">Tomorrow</Badge>
-                                        </div>
-                                        <div className="mt-2 flex items-center gap-2 text-sm text-muted-foreground">
-                                            <Clock className="h-4 w-4" />
-                                            <span>7:00 PM - 9:00 PM</span>
-                                        </div>
-                                        <div className="mt-3 flex gap-2">
-                                            <Badge variant="outline" className="border-[var(--vibrant-teal)] text-[var(--vibrant-teal)]">
-                                                Game Night
-                                            </Badge>
-                                            <Badge variant="outline" className="border-[var(--vibrant-teal)] text-[var(--vibrant-teal)]">
-                                                Trivia
-                                            </Badge>
+                                            <span className="text-muted-foreground">→</span>
+                                            <div>
+                                                <p className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">End</p>
+                                                <p className="text-sm font-bold">9:15 PM</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </TabsContent>
-                                <TabsContent value="venues" className="mt-4 space-y-4">
-                                    <div className="rounded-lg border p-4">
+                                <TabsContent forceMount value="venues" className="row-start-1 col-start-1 mt-0 space-y-4 data-[state=inactive]:invisible data-[state=inactive]:pointer-events-none">
+                                    <div className="rounded-lg border p-4 space-y-2 min-h-[170px]">
                                         <div>
                                             <h4 className="font-bold">The Speakeasy</h4>
-                                            <p className="text-sm text-muted-foreground">Cocktail Lounge</p>
+                                            <p className="text-sm text-muted-foreground">Boston, MA</p>
                                         </div>
-                                        <div className="mt-2 flex items-center gap-2 text-sm text-muted-foreground">
-                                            <MapPin className="h-4 w-4" />
-                                            <span>0.5 miles away</span>
+                                        <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                                            <MapPin className="h-4 w-4 text-[var(--vibrant-teal)]" />
+                                            <span>0.5 mi away &middot; Closes 2:00 AM</span>
                                         </div>
-                                        <div className="mt-3 flex gap-2">
-                                            <Badge variant="outline" className="border-[var(--vibrant-teal)] text-[var(--vibrant-teal)]">
-                                                Craft Cocktails
-                                            </Badge>
-                                            <Badge variant="outline" className="border-[var(--vibrant-teal)] text-[var(--vibrant-teal)]">
-                                                Live Piano
-                                            </Badge>
+                                        <div className="flex flex-wrap gap-2">
+                                            <Badge variant="outline" className="border-[var(--vibrant-teal)] text-[var(--vibrant-teal)]">Craft Cocktails</Badge>
+                                            <Badge variant="outline" className="border-[var(--vibrant-teal)] text-[var(--vibrant-teal)]">Live Piano</Badge>
+                                            <Badge variant="outline" className="border-[var(--vibrant-teal)] text-[var(--vibrant-teal)]">Outdoor Seating</Badge>
+                                        </div>
+                                        <div className="flex gap-2 pt-1">
+                                            <div className="rounded-md border border-[var(--light-gray)]/30 p-1.5">
+                                                <InstagramIcon className="h-4 w-4 text-[var(--vibrant-teal)]" />
+                                            </div>
+                                            <div className="rounded-md border border-[var(--light-gray)]/30 p-1.5">
+                                                <FacebookIcon className="h-4 w-4 text-[var(--vibrant-teal)]" />
+                                            </div>
                                         </div>
                                     </div>
-                                    <div className="rounded-lg border p-4">
+                                    <div className="rounded-lg border p-4 space-y-2 min-h-[170px]">
                                         <div>
                                             <h4 className="font-bold">Hopworks Brewery</h4>
-                                            <p className="text-sm text-muted-foreground">Brewery</p>
+                                            <p className="text-sm text-muted-foreground">Portland, OR</p>
                                         </div>
-                                        <div className="mt-2 flex items-center gap-2 text-sm text-muted-foreground">
-                                            <MapPin className="h-4 w-4" />
-                                            <span>1.2 miles away</span>
+                                        <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                                            <MapPin className="h-4 w-4 text-[var(--vibrant-teal)]" />
+                                            <span>1.2 mi away &middot; Closes 11:00 PM</span>
                                         </div>
-                                        <div className="mt-3 flex gap-2">
-                                            <Badge variant="outline" className="border-[var(--vibrant-teal)] text-[var(--vibrant-teal)]">
-                                                Craft Beer
-                                            </Badge>
-                                            <Badge variant="outline" className="border-[var(--vibrant-teal)] text-[var(--vibrant-teal)]">
-                                                Food Menu
-                                            </Badge>
+                                        <div className="flex flex-wrap gap-2">
+                                            <Badge variant="outline" className="border-[var(--vibrant-teal)] text-[var(--vibrant-teal)]">Craft Beer</Badge>
+                                            <Badge variant="outline" className="border-[var(--vibrant-teal)] text-[var(--vibrant-teal)]">Food Menu</Badge>
+                                            <Badge variant="outline" className="border-[var(--vibrant-teal)] text-[var(--vibrant-teal)]">Family Friendly</Badge>
+                                        </div>
+                                        <div className="flex gap-2 pt-1">
+                                            <div className="rounded-md border border-[var(--light-gray)]/30 p-1.5">
+                                                <InstagramIcon className="h-4 w-4 text-[var(--vibrant-teal)]" />
+                                            </div>
+                                            <div className="rounded-md border border-[var(--light-gray)]/30 p-1.5">
+                                                <FacebookIcon className="h-4 w-4 text-[var(--vibrant-teal)]" />
+                                            </div>
                                         </div>
                                     </div>
                                 </TabsContent>
+                                </div>
                             </Tabs>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -179,14 +209,22 @@ export default function TheApp() {
             <section className="w-full py-12 md:py-24 bg-[var(--charcoal-gray)]/20">
                 <div className="container px-4 md:px-6 mx-auto">
                     <div className="text-center mb-12 space-y-3">
-                        <Badge className="inline-flex bg-[var(--goldenrod)] text-[var(--dark-sapphire)] hover:bg-[var(--goldenrod)]/90">Features</Badge>
                         <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">Built for every kind of night out</h2>
                         <p className="max-w-[600px] mx-auto text-muted-foreground md:text-xl/relaxed">
                             Whether you know exactly what you want or you&rsquo;re open to anything, To The Pub has the tools to help you find it.
                         </p>
                     </div>
                     <div className="grid gap-6 md:grid-cols-2">
-                        <div className="rounded-lg border p-6 space-y-3">
+                         <div className="rounded-lg p-6 space-y-3 bg-white">
+                            <div className="rounded-full bg-[var(--vibrant-teal)]/10 p-2 w-fit">
+                                <Clock className="h-6 w-6 text-[var(--vibrant-teal)]" />
+                            </div>
+                            <h3 className="text-xl font-bold">Open Right Now</h3>
+                            <p className="text-muted-foreground">
+                                See what&rsquo;s open near you in real time. Venues keep their hours up-to-date through our business dashboard, so you always know before you go.
+                            </p>
+                        </div>
+                        <div className="rounded-lg p-6 space-y-3 bg-white">
                             <div className="rounded-full bg-[var(--vibrant-teal)]/10 p-2 w-fit">
                                 <Filter className="h-6 w-6 text-[var(--vibrant-teal)]" />
                             </div>
@@ -201,7 +239,7 @@ export default function TheApp() {
                                 <Badge variant="outline" className="border-[var(--vibrant-teal)] text-[var(--vibrant-teal)]">Food Service</Badge>
                             </div>
                         </div>
-                        <div className="rounded-lg border p-6 space-y-3">
+                        <div className="rounded-lg p-6 space-y-3 bg-white">
                             <div className="rounded-full bg-[var(--vibrant-teal)]/10 p-2 w-fit">
                                 <Calendar className="h-6 w-6 text-[var(--vibrant-teal)]" />
                             </div>
@@ -216,22 +254,13 @@ export default function TheApp() {
                                 <Badge variant="outline" className="border-[var(--vibrant-teal)] text-[var(--vibrant-teal)]">DJ Night</Badge>
                             </div>
                         </div>
-                        <div className="rounded-lg border p-6 space-y-3">
+                        <div className="rounded-lg p-6 space-y-3 bg-white">
                             <div className="rounded-full bg-[var(--vibrant-teal)]/10 p-2 w-fit">
                                 <MapPin className="h-6 w-6 text-[var(--vibrant-teal)]" />
                             </div>
                             <h3 className="text-xl font-bold">Venue Profiles</h3>
                             <p className="text-muted-foreground">
                                 Every venue has a dedicated page with opening hours, venue tags, social media links, and all upcoming events — everything you need before you head out the door.
-                            </p>
-                        </div>
-                        <div className="rounded-lg border p-6 space-y-3">
-                            <div className="rounded-full bg-[var(--vibrant-teal)]/10 p-2 w-fit">
-                                <Clock className="h-6 w-6 text-[var(--vibrant-teal)]" />
-                            </div>
-                            <h3 className="text-xl font-bold">Open Right Now</h3>
-                            <p className="text-muted-foreground">
-                                See what&rsquo;s open near you in real time. Venues keep their hours up-to-date through our business dashboard, so you always know before you go.
                             </p>
                         </div>
                     </div>
