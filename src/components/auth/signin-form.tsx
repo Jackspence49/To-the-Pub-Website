@@ -117,7 +117,7 @@ export function SignInForm() {
       )}
 
       <div className="space-y-2">
-        <Label htmlFor="email" className="text-sm font-medium text-[var(--charcoal-gray)]">
+        <Label htmlFor="email" className="text-sm font-medium text-[var(--dark-sapphire)]">
           Email Address
         </Label>
         <Input
@@ -137,7 +137,7 @@ export function SignInForm() {
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor="password" className="text-sm font-medium text-[var(--charcoal-gray)]">
+        <Label htmlFor="password" className="text-sm font-medium text-[var(--dark-sapphire)]">
           Password
         </Label>
         <div className="relative">

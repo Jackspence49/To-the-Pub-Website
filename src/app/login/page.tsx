@@ -1,30 +1,29 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { SignInForm } from "@/components/auth/signin-form"
 
 export default function SignInPage() {
   return (
-    <div className="min-h-screen flex flex-col bg-[var(--dark-sapphire)]">
-      {/* Main Content */}
-      <main className="flex-1 flex items-center justify-center p-4">
-        <div className="w-full max-w-md space-y-6">
-          {/* Welcome Message */}
-          <div className="text-center space-y-2">
-            <h1 className="text-3xl font-bold text-white">Welcome Back</h1>
-            <p className="text-[var(--light-gray)]">Sign in to your To The Pub account</p>
+    <div className="flex-1 flex flex-col bg-[var(--light-gray)]">
+      <main className="flex-1 flex items-center justify-center p-4 pb-24">
+        <div className="w-full max-w-md">
+
+          {/* Brand Header */}
+          <div className="text-center mb-8">
+            <h1 className="text-2xl font-bold text-[var(--dark-sapphire)]">To The Pub</h1>
+            <p className="text-sm text-[var(--charcoal-gray)] mt-1">Venue & event management</p>
           </div>
 
           {/* Sign In Card */}
-          <Card className="bg-white border-[var(--light-gray)] shadow-xl">
-            <CardHeader className="space-y-1">
-              <CardTitle className="text-2xl text-center text-[var(--dark-sapphire)]">Sign In</CardTitle>
-              <CardDescription className="text-center text-[var(--charcoal-gray)]">
-                Enter your email and password to access your account
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
+          <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
+            <div className="h-1 bg-[var(--vibrant-teal)]" />
+            <div className="p-8">
+              <div className="mb-6">
+                <h2 className="text-xl font-semibold text-[var(--dark-sapphire)]">Welcome back</h2>
+                <p className="text-sm text-[var(--charcoal-gray)] mt-1">Sign in to access your dashboard</p>
+              </div>
               <SignInForm />
-            </CardContent>
-          </Card>
+            </div>
+          </div>
+
         </div>
       </main>
     </div>
